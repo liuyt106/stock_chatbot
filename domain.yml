@@ -1,0 +1,186 @@
+version: "3.1"
+
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 300
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet:
+      use_entities: true
+  - goodbye:
+      use_entities: true
+  - affirm:
+      use_entities: true
+  - deny:
+      use_entities: true
+  - mood_great:
+      use_entities: true
+  - mood_unhappy:
+      use_entities: true
+  - bot_challenge:
+      use_entities: true
+  - ask_stock_price:
+      use_entities:
+        - stock
+  - ask_stock_news:
+      use_entities:
+        - stock
+  - waste:
+      use_entities: true
+  - out_of_scope:
+      use_entities: true
+  - ask_historical_data_stock:
+      use_entities:
+        - stock
+  - select_historical_time:
+      use_entities:
+        - date_message
+  - select_historical_interval:
+      use_entities:
+        - interval
+  - ask_function:
+      use_entities: true
+  - affirm_graph:
+      use_entities: true
+  - deny_graph:
+      use_entities: true
+
+actions:
+- utter_greet
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- action_stock_price
+- utter_ask_stock
+- utter_affirm
+- utter_intro
+- utter_default
+- utter_cheer_up
+- action_stock_news
+- action_waster
+- action_out_of_scope
+- utter_ask_historical_data_time
+- utter_ask_historical_data_interval
+- utter_ask_graph
+- action_historical_price
+- action_historical_price_graph
+
+entities:
+  - stock
+  - date_message
+  - interval
+
+slots:
+  stock:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: stock
+
+  date_message:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date_message
+
+  interval:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: interval
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  - text: "Hello. Nice to meet you"
+  - text: "Hi, what can I do for you?"
+  - text: "Greetings! How can I help you?"
+  - text: "Hey! My friend"
+  - text: "Hey! How's you day?"
+  - text: "Nice to meet you"
+  - text: "Hi, what do you need me to do?"
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_intro:
+    - text: "It's such an honor to take your service."
+    - text: "Thank you for choosing me!"
+    - text: "I hope I can help you"
+    - text: "It's such an honor to serve you."
+    - text: "I am a stock chatbot."
+  utter_function_menu:
+    - text: "Currently I can help you with 1. checkout the live price of stocks 2. Get historical data 3. Give you some news of the stock."
+
+  utter_did_that_help:
+  - text: "Is that helpful to you?"
+  - text: "How do you think about it"
+  - text: "Did that help you?"
+  - text: "Is that help?"
+
+
+  utter_happy:
+  - text: "Great, carry on!"
+  - text: "Awesome, thanks!!"
+  - text: "Sweet!"
+  - text: "You are so kind!"
+  - text: "Cool! That makes me happy"
+  - text: "Thank you"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "See you!"
+  - text: "Good to see you"
+  - text: "See you later!"
+  - text: "Bye! Have a nice day!"
+  - text: "See you soon!"
+  - text: "Bye-bye!"
+
+  utter_iamabot:
+  - text: "I am a stock chatbot, powered by Rasa and Anna."
+  - text: "Yes I am."
+  - text: "I am a bot, not a human."
+  - text: "I'm your stock assistant."
+
+  utter_ask_stock:
+    - text: "Which stock price you want?"
+    - text: "For What Stock ?"
+    - text: "Can you tell me the ticker symbol in order to get the price?"
+
+  utter_affirm:
+    - text: "Done!"
+    - text: "Great."
+    - text: "OK."
+    - text: "Yes."
+
+
+  utter_default:
+    - text: "Oh, Maybe I should give you a Manual before you talk to me, Cause I'm still a young, you know."
+
+  utter_can_do:
+    - text: "Sure thing!"
+    - text: "Can do!"
+    - text: "You got it."
+
+  utter_ask_historical_data_time:
+    - text: "Which time of data you want to query? (e.g.,2020-01-01 to 2021-01-01)"
+    - text: "Please give me a time range? (e.g.,2020-01-01 to 2021-01-01)"
+    - text: "what's the start date and the end date? (e.g.,2020-01-01 to 2021-01-01)"
+    - text: "Can you give me a time range? (e.g.,2020-01-01 to 2021-01-01)"
+    - text: "Any time range? (e.g.,2020-01-01 to 2021-01-01)"
+
+  utter_ask_historical_data_interval:
+    - text: "select the data interval want to query. (1：1 day, 2：1 month 3： 1 week)"
+    - text: "Please select an time interval for your data. (1：1 day, 2：1 month 3： 1 week)"
+    - text: "select an time interval please. (1：1 day, 2：1 month 3： 1 week)"
+    - text: "select and query time interval. (1：1 day, 2：1 month 3： 1 week)"
+
+  utter_ask_graph:
+    - text: "Do you need a graph for your data?"
+    - text: "Do you need me to graph the data?"
+    - text: "You need a graph?"
+
+

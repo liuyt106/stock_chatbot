@@ -1,0 +1,386 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+    - good
+    - very good
+    - wonderful
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: ask_stock_price
+  examples: |
+    - what is the stock price of [AAPL]{"entity":"stock"}
+    - what about [TSLA](stock)
+    - stock price of [GOOG](stock)
+    - tell me about the price of [EDU]{"entity":"stock"}
+    - what about [tsla](stock)
+    - what about [MULN](stock)
+    - what is the stock price of [FB]{"entity":"stock"}
+    - tell me the price of [fb]{"entity":"stock"}
+    - what's the price of [NVDA]{"entity":"stock"}
+    - give me the price of [nvda]{"entity":"stock"}
+    - find me the price of [AMD]{"entity":"stock"}
+    - price of [amd](stock)
+    - price [MSFT](stock)
+    - find me the price of [BWV]{"entity":"stock"}
+    - find the price of [AMZN]{"entity":"stock"}
+    - can you find me the price of [AMZN]{"entity":"stock"}
+    - current price of [TSLA]{"entity":"stock"}
+      - tell me current price of [AMZN]{"entity":"stock"}
+      - I want to know the current price of [NSRGY]{"entity":"stock"}
+      - tell me about the current price of [AAPL]{"entity":"stock"}
+      - Can you tell me the current price of [HDB]{"entity":"stock"}
+      - current price of [KOTAKBANK.NS]{"entity":"stock"}
+      - Please tell me the current price of [ZM]{"entity":"stock"}
+      - current price of [RELIANCE.NS]{"entity":"stock"}
+      - price of [NFLX]{"entity":"stock"}
+      - Get me the current price of [PNB.NS]{"entity":"stock"}
+      - [UVSL.NS]{"entity":"stock"}
+      - [IDEA.NS]{"entity":"stock"}
+      - [LAKSHVILAS.NS]{"entity":"stock"}
+      - [ADANIPOWER.NS]{"entity":"stock"}
+      - [RTNINFRA.BO]{"entity":"stock"}
+      - [RPOWER.NS]{"entity":"stock"}
+      - [TVSMOTOR-BL.NS]{"entity":"stock"}
+      - [SUZLON.NS]{"entity":"stock"}
+      - [YESBANK.NS]{"entity":"stock"}
+      - [MAHABANK.NS]{"entity":"stock"}
+      - [IDEA.BO]{"entity":"stock"}
+      - [RCOM.BO]{"entity":"stock"}
+      - [CENTRALBK.NS]{"entity":"stock"}
+      - [IOB.NS]{"entity":"stock"}
+      - [RTNPOWER.NS]{"entity":"stock"}
+      - [RENUKA.BO]{"entity":"stock"}
+      - [TATAMOTORS.NS]{"entity":"stock"}
+      - [AAPL]{"entity":"stock"}
+      - [TATAMOTORS-BL.NS]{"entity":"stock"}
+      - [BANKBARODA.NS]{"entity":"stock"}
+      - [BHEL.NS]{"entity":"stock"}
+      - [ITC.NS]{"entity":"stock"}
+      - [ONGC.NS]{"entity":"stock"}
+      - [HFCL.NS]{"entity":"stock"}
+      - [ASHOKLEY.NS]{"entity":"stock"}
+      - [IMUN]{"entity":"stock"}
+      - [KGET]{"entity":"stock"}
+      - [GOOG]{"entity":"stock"}
+      - [MSFT]{"entity":"stock"}
+      - [GOOGL]{"entity":"stock"}
+      - [FB]{"entity":"stock"}
+      - [TSM]{"entity":"stock"}
+      - [BABA]{"entity":"stock"}
+      - [JPM]{"entity":"stock"}
+      - [V]{"entity":"stock"}
+      - [NVDA]{"entity":"stock"}
+      - [JNJ]{"entity":"stock"}
+      - [WMT]{"entity":"stock"}
+      - [UNH]{"entity":"stock"}
+      - [BAC]{"entity":"stock"}
+      - [MA]{"entity":"stock"}
+      - [PG]{"entity":"stock"}
+      - [HD]{"entity":"stock"}
+      - [DIS]{"entity":"stock"}
+      - [PYPL]{"entity":"stock"}
+      - [ASML]{"entity":"stock"}
+      - [CMCSA]{"entity":"stock"}
+      - [XOM]{"entity":"stock"}
+      - [TM]{"entity":"stock"}
+      - [KO]{"entity":"stock"}
+      - [PEP]{"entity":"stock"}
+      - [PFE]{"entity":"stock"}
+      - [CSCO]{"entity":"stock"}
+      - [INTC]{"entity":"stock"}
+      - [NKE]{"entity":"stock"}
+      - [ORCL]{"entity":"stock"}
+      - [ADBE]{"entity":"stock"}
+      - [CVX]{"entity":"stock"}
+      - [T]{"entity":"stock"}
+      - [NVS]{"entity":"stock"}
+      - [ABT]{"entity":"stock"}
+      - [ACN]{"entity":"stock"}
+      - [HON]{"entity":"stock"}
+      - [MCD]{"entity":"stock"}
+      - [UL]{"entity":"stock"}
+      - [PM]{"entity":"stock"}
+      - [QCOM]{"entity":"stock"}
+      - [JPM]{"entity":"stock"}
+
+- intent: ask_stock_news
+  examples: |
+    - find me some news of [AAPL]{"entity":"stock"}
+    - what news about [TSLA]{"entity":"stock"}
+    - news of [GOOG](stock)
+    - what happened to [HYMC]{"entity":"stock"}
+    - tell me about the story of [EDU]{"entity":"stock"}
+    - what happened to [tsla](stock)
+    - do you have any news of [MULN]{"entity":"stock"}
+    - what is new about  [FB]{"entity":"stock"}
+    - tell me the story of [tesla]{"entity":"stock"}
+    - what's the news of [NVDA]{"entity":"stock"}
+    - give me the news of [nvda]{"entity":"stock"}
+    - find me the news of [AMD]{"entity":"stock"}
+    - News of [amd]{"entity":"stock"}
+    - [MSFT](stock) news
+    - what do you know about [NKE]{"entity":"stock"}
+
+- intent: waste
+  examples: |
+    - vhadgjb
+    - jhsbj
+    - kjjkl
+    - ryusjh
+    - hokjs
+    - hjhkjlk
+    - bmnabkj
+    - flssfl;s;
+    - iiweruosid7
+    - erw87er7
+
+- intent: out_of_scope
+  examples: |
+    - Find me the hospital
+    - Tell me some news of NBA
+    - Who painted Mona Lisa?
+    - tell me some joke.
+    - shut up
+    - do you know where is the nearest haircut?
+    - please help with my ice cream it's dripping
+    - no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
+    - i want a non dripping ice cream
+    - someone call the police i think the bot died
+    - show me a picture of a chicken
+    - neither
+    - I want french cuisine
+    - i am hungry
+    - restaurant
+    - can i be shown a gluten free restaurant
+    - i don't care!!!!
+    - i do not care how are you
+    - Who is Bruce Lee?
+    - again?
+    - oh wait i gave you my work email address can i change it?
+    - hang on let me find it
+    - stop it, i do not care!!!
+    - how come?
+    - I changed my mind
+    - what?
+    - did i break you
+    - that link doesn't work!
+    - you already have that
+    - this is a really frustrating experience
+    - no stop
+    - give me food
+    - i want food
+    - Can I ask you questions first?
+    - is it a wasteland full of broken robot parts?
+    - can we keep chatting?
+    - talk to me
+    - who is your favourite robot?
+    - can you help me to build a bot
+    - a wood chuck can't chuck any kind of wood
+    - a wood chuck can't chuck wood
+    - are you wearing anything?
+    - can i arrange a taxi?
+    - can i book a taxi?
+    - can i order a pizza?
+    - give quiche a chance
+    - how much wood could a wood chuck chuck if a wood chuck would chuck wood?
+    - i am heavy weapons guy and this is my weapon
+    - i know kung-fu
+    - i need a taxi
+    - i want a pepperoni pizza
+    - i want to order a pizza
+    - i'd like a pizza please
+    - i'm all out of bubblegum
+    - i'm asking you to marry me
+    - it's an albany expression
+    - marry me
+    - now i have a machine gun ho-ho-ho!
+    - please marry me
+    - tell me what you're wearing?
+    - trial by stone!
+    - what are you wearing?
+    - will you marry me?
+    - you come to me on the day of my daughter's wedding
+    - you don't win friends with salad
+    - you're going to need a bigger boat
+    - fuck you
+    - oh my god
+
+
+- intent: ask_historical_data_stock
+  examples: |
+    - historical data of [TSLA]{"entity":"stock"}
+    - find me the historical data of [TSLA]{"entity":"stock"}
+    - data of [TSLA]{"entity":"stock"}
+    - can you give me the data of [AMZN]{"entity":"stock"}
+    - do you have the historical data of [AMD]{"entity":"stock"}
+    - tell me the historical data of [NFLX]{"entity":"stock"}
+    - [TSLA]{"entity":"stock"} historical
+    - [nflx]{"entity":"stock"} historical data
+    - historical data of [nvda]{"entity":"stock"}
+    - retrive the historical data of [aapl]{"entity":"stock"}
+    - give me the data of [AAPL]{"entity":"stock"}
+    - find me the data of [FB]{"entity":"stock"}
+
+- intent: select_historical_time
+  examples: |
+    - [2020-04-11 to 2021-03-11]{"entity":"date_message"}
+    - from [2020-04-11 to 2021-3-01]{"entity":"date_message"}
+    - [2020-04-11 and 2021-03-01]{"entity":"date_message"}
+    - Emm, from [2020-04-11 to 2021-03-01]{"entity":"date_message"}
+    - From [Jan 1 2021 to Feb 2 2021]{"entity":"date_message"}
+    - Yes, from [2013-05-01 to 2014-06-01]{"entity":"date_message"}
+    - ok, from [Feb 1 2016 to Oct 1 2020]{"entity":"date_message"}
+    - from [Feb 1 2016 to Oct 1 2020]{"entity":"date_message"}
+    - from [Oct 1 2016 to Nov 1 2017]{"entity":"date_message"}
+    - from [Feb 1 2012 to Oct 1 2013]{"entity":"date_message"}
+    - from [Jan 1 2017 to Jun 1 2022]{"entity":"date_message"}
+    - from [Jan 1 2021 to Jul 1 2022]{"entity":"date_message"}
+    - from [Nov 1 2018 to Oct 1 2019]{"entity":"date_message"}
+    - from [Dec 1 2016 to Dec 1 2017]{"entity":"date_message"}
+    - from [Mar 1 2010 to Apr 1 2012]{"entity":"date_message"}
+    - from [Apr 1 2021 to Dec 1 2021]{"entity":"date_message"}
+    - from [Apr 1 2018 to Aug 1 2018]{"entity":"date_message"}
+    - from [May 1 2017 to Aug 1 2017]{"entity":"date_message"}
+    - from [Aug 1 2014 to Aug 1 2015]{"entity":"date_message"}
+    - from [Jun 1 2014 to Jun 1 2015]{"entity":"date_message"}
+    - from [Jul 1 2013 to Dec 1 2020]{"entity":"date_message"}
+    - from [Nov 1 2016 to Dec 1 2020]{"entity":"date_message"}
+    - from [Nov 1 2019 to Mar 1 2020]{"entity":"date_message"}
+    - from [Sep 1 2018 to Sep 1 2019]{"entity":"date_message"}
+    - from [Sep 1 2020 to Sep 1 2021]{"entity":"date_message"}
+    - [2010-03-01 to 2021-03-01]{"entity":"date_message"}
+    - [2015-11-03 to 2017-12-03]{"entity":"date_message"}
+    - [2016-06-20 to 2018-11-30]{"entity":"date_message"}
+    - [2017-08-11 to 2017-10-30]{"entity":"date_message"}
+    - [2016-06-15 to 2022-09-02]{"entity":"date_message"}
+    - [2015-05-17 to 2015-08-07]{"entity":"date_message"}
+    - [2014-04-09 to 2016-07-15]{"entity":"date_message"}
+    - [2013-04-22 to 2017-12-17]{"entity":"date_message"}
+    - [2011-02-26 to 2013-10-22]{"entity":"date_message"}
+    - [2012-01-30 to 2022-07-24]{"entity":"date_message"}
+    - [2010-12-15 to 2011-06-15]{"entity":"date_message"}
+    - [2013-11-17 to 2015-05-01]{"entity":"date_message"}
+    - [2014-10-07 to 2016-04-06]{"entity":"date_message"}
+    - [2017-09-04 to 2018-01-05]{"entity":"date_message"}
+    - [2018-07-01 to 2019-09-27]{"entity":"date_message"}
+
+- intent: select_historical_interval
+  examples: |
+    - [1]{"entity":"interval"}
+    - [2]{"entity":"interval"}
+    - [3]{"entity":"interval"}
+    - [1 day]{"entity":"interval"}
+    - [1 month]{"entity":"interval"}
+    - [1 week]{"entity":"interval"}
+    - Yes, [1 day].{"entity":"interval"}
+    - ok, I choose [1 week]{"entity":"interval"}
+    - I prefer [1 month]{"entity":"interval"}
+- intent: ask_function
+  examples: |
+    - what can you do ?
+    - Ok, what can you do ?
+    - what can you do for me ?
+    - what can I get from you ?
+
+- intent: affirm_graph
+  examples: |
+    - yes, I need.
+    - I need the graph.
+    - please, give me the graph.
+    - well, I really need the graph.
+    - correct, give me the graph
+
+- intent: deny_graph
+  examples: |
+    - I don't need the graph
+    - I don't think I need.
+    - no graph
+    - no diagram
+    - not for this time

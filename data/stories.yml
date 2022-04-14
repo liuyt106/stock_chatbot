@@ -1,0 +1,113 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: good bye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challengea
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- story: bot function
+  steps:
+    - intent: ask_function
+    - action: utter_intro
+    - action: utter_function_menu
+
+- story: stock price
+  steps:
+    - intent: ask_stock_price
+    - action: action_stock_price
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+
+- story: stock price 2
+  steps:
+    - intent: ask_stock_price
+    - action: action_stock_price
+    - action: utter_did_that_help
+    - intent: deny
+    - action: utter_goodbye
+
+- story: stock news
+  steps:
+    - intent: ask_stock_news
+    - action: action_stock_news
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+
+
+- story: stock news
+  steps:
+    - intent: ask_stock_news
+    - action: action_stock_news
+    - action: utter_did_that_help
+    - intent: deny
+    - action: utter_goodbye
+
+
+- story: waste
+  steps:
+    - intent: waste
+    - action: action_waster
+
+- story: scope
+  steps:
+  - intent: out_of_scope
+  - action: action_out_of_scope
+
+- story: historical price
+  steps:
+    - intent: ask_historical_data_stock
+    - action: utter_ask_historical_data_time
+    - intent: select_historical_time
+    - action: utter_ask_historical_data_interval
+    - intent: select_historical_interval
+    - action: utter_ask_graph
+    - intent: affirm_graph
+    - action: action_historical_price
+    - action: action_historical_price_graph
+
+- story: historical price 2
+  steps:
+    - intent: ask_historical_data_stock
+    - action: utter_ask_historical_data_time
+    - intent: select_historical_time
+    - action: utter_ask_historical_data_interval
+    - intent: select_historical_interval
+    - action: utter_ask_graph
+    - intent: deny_graph
+    - action: action_historical_price
